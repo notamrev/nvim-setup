@@ -29,7 +29,13 @@ return {
                     storagePath = vim.fn.stdpath("cache") .. "/kotlin_language_server",
                 },
             })
-            vim.lsp.config("jdtls", {})
+            local lombok_jar = vim.fn.expand("$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar")
+            vim.lsp.config("jdtls", {
+                cmd = {
+                    "jdtls",
+                    "--jvm-arg=-javaagent:" .. lombok_jar,
+                },
+            })
 
             vim.lsp.enable({
                 "lua_ls",
