@@ -36,12 +36,16 @@ return {
                     "--jvm-arg=-javaagent:" .. lombok_jar,
                 },
             })
+            vim.lsp.config("clangd", {})
+            vim.lsp.config("pyright", {})
 
             vim.lsp.enable({
                 "lua_ls",
                 "gopls",
                 "kotlin_language_server",
                 "jdtls",
+                "clangd",
+                "pyright",
             })
 
             vim.api.nvim_create_autocmd("LspAttach", {

@@ -12,6 +12,8 @@ return {
                 "gopls",
                 "kotlin_language_server",
                 "jdtls",
+                "clangd",
+                "pyright",
             },
         },
     },
